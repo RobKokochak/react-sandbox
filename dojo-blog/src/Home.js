@@ -1,18 +1,20 @@
+import { useState } from "react";
+
 const Home = () => {
+  
+  const [name, setName] = useState('rob'); //the useState hook returns two things, a value and a function which allows access to change it
+  const [age, setAge] = useState(25);
 
   const handleClick = () => {
-    console.log('hello');
-  }
-
-  const handleClickAgain = (name, e) => {
-    console.log('hello ' + name, e.target);
+    setName('luigi');
+    setAge(30);
   }
 
   return (  
     <div className="home">
       <h2>Homepage</h2>
+      <p>{ name } is { age } years old</p>
       <button onClick={handleClick}>Click me</button>
-      <button onClick={(e) => handleClickAgain('rob', e)}>Click me again</button>
     </div>
   );
 }
